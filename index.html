@@ -7,9 +7,8 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -103,128 +102,236 @@
     </script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
+
 <!-- Top Navigation -->
 <nav class="w-full flex justify-center py-6 px-margin-mobile md:px-margin-desktop sticky top-0 bg-background/90 backdrop-blur-sm z-50">
 <div class="w-full max-w-[960px] flex items-center justify-between">
 <a class="text-[18px] font-semibold text-primary tracking-tight hover:opacity-80 transition-opacity" href="#">Reach</a>
-<a class="text-on-surface-variant text-label-md hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant text-label-md hover:text-on-surface transition-colors" href="privacy.html">Privacy</a>
 </div>
 </nav>
+
 <main class="flex-grow flex flex-col items-center w-full">
+
 <!-- Hero Section -->
 <section class="w-full px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-12 md:pb-16 flex flex-col items-center text-center">
 <div class="max-w-[720px] flex flex-col items-center">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant bg-surface-container-lowest text-label-sm text-on-surface-variant mb-8">
 <span class="material-symbols-outlined text-[14px]">smartphone</span>
-                    Quit Drinking Toolkit · iOS
-                </div>
+Quit Drinking Toolkit · iOS
+</div>
 <h1 class="font-headline-xl md:text-[56px] md:leading-[64px] tracking-tight mb-6 text-on-surface">
-                    Built for the moment,<br class="hidden md:block"/> not the milestone
-                </h1>
+Built for the moment,<br class="hidden md:block"/> not the milestone
+</h1>
 <p class="font-body-lg text-on-surface-variant max-w-[600px] mb-10">
-                    A distraction-free toolkit designed to help you navigate cravings and build resilience, one urge at a time.
-                </p>
+A distraction-free toolkit designed to help you navigate cravings and build resilience, one urge at a time.
+</p>
 <a class="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-on-primary px-8 py-4 rounded-full font-label-md transition-all active:scale-95 shadow-[0_4px_20px_0_rgba(74,101,79,0.15)] mb-4" href="#">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
-                    Download on the App Store
-                </a>
+<svg class="w-5 h-5 fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+Download on the App Store
+</a>
 <p class="text-label-sm text-on-surface-variant/70">
-                    Free 14-day trial. €39.99/year after.
-                </p>
+Free 14-day trial. €39.99/year after.
+</p>
 </div>
 </section>
-<!-- Phone Mockup -->
-<section class="w-full px-margin-mobile flex justify-center pb-24 md:pb-32">
-<div class="relative w-[272px] h-[588px] bg-surface-container-lowest rounded-[44px] border-[6px] border-surface-container-highest shadow-[0_20px_60px_-15px_rgba(141,170,145,0.2)] overflow-hidden flex flex-col items-center justify-between p-6">
-<!-- Phone Inner Content -->
-<div class="w-full flex flex-col items-center pt-8 text-center">
-<p class="font-body-md text-on-surface-variant mb-1">Current streak</p>
-<div class="text-[64px] leading-none font-bold text-primary tracking-tighter mb-2">12</div>
-<p class="font-headline-lg text-on-surface mb-8">days sober</p>
-<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col items-center">
-<p class="text-label-sm text-on-surface-variant mb-1">Money saved</p>
-<p class="font-headline-lg text-primary">€84.20</p>
-</div>
-</div>
-<div class="w-full flex flex-col gap-4">
-<div class="h-[1px] w-full bg-outline-variant/30"></div>
-<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface py-3 rounded-full font-label-md transition-colors flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-[18px]">emergency</span>
-                        Reach for help
-                    </button>
-<p class="text-center text-[10px] text-on-surface-variant/60 font-medium tracking-wide uppercase">
-                        988 · Crisis Lifeline
-                    </p>
-</div>
-</div>
+
+<!-- Phone Mockups — three column -->
+<section class="w-full pb-24 md:pb-32">
+
+  <!-- Section header -->
+  <div class="text-center mb-14 px-margin-mobile">
+    <span class="text-label-sm tracking-widest text-primary uppercase mb-4 block">See it in action</span>
+    <h2 class="font-headline-xl text-on-surface">Everything within reach</h2>
+  </div>
+
+  <!-- Horizontal scroll on mobile, centred row on desktop -->
+  <div class="flex gap-8 overflow-x-auto pb-6 px-margin-mobile md:px-margin-desktop md:justify-center snap-x snap-mandatory">
+
+    <!-- Phone 1: Home screen -->
+    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
+      <div class="relative w-[240px] h-[520px] bg-surface-container-lowest rounded-[40px] border-[5px] border-surface-container-highest shadow-[0_20px_60px_-15px_rgba(141,170,145,0.2)] overflow-hidden flex flex-col items-center justify-between p-5">
+        <!-- Pill notch -->
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-outline-variant/40 rounded-full"></div>
+        <div class="w-full flex flex-col items-center pt-8 text-center">
+          <p class="text-[11px] text-on-surface-variant tracking-wide mb-1">Current streak</p>
+          <div class="text-[54px] leading-none font-bold text-primary tracking-tighter mb-1">12</div>
+          <p class="text-[17px] font-semibold text-on-surface mb-6">days sober</p>
+          <div class="w-full bg-surface-container-low rounded-xl p-3 flex flex-col items-center">
+            <p class="text-[9px] tracking-widest uppercase text-on-surface-variant mb-1">Money saved</p>
+            <p class="text-[20px] font-semibold text-primary">€84.20</p>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-3">
+          <div class="h-[1px] w-full bg-outline-variant/30"></div>
+          <div class="w-full bg-primary text-on-primary py-3 rounded-full text-[13px] font-medium flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[16px]">emergency</span>
+            Reach for help
+          </div>
+          <p class="text-center text-[9px] text-on-surface-variant/50 tracking-widest uppercase">988 · Crisis Lifeline</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="font-label-md text-on-surface font-semibold">Home screen</p>
+        <p class="text-[12px] text-on-surface-variant mt-1">Streak, savings &amp; one-tap help</p>
+      </div>
+    </div>
+
+    <!-- Phone 2: Widget (dark iOS home screen) -->
+    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
+      <div class="relative w-[240px] h-[520px] bg-[#1a1a1a] rounded-[40px] border-[5px] border-[#333] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col p-4 pt-8 gap-3">
+        <!-- Pill notch -->
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-[#444] rounded-full"></div>
+        <!-- Widget card -->
+        <div class="w-full bg-[#2a2a2a] rounded-[20px] p-4 flex-shrink-0">
+          <p class="text-[9px] text-[#888] font-semibold uppercase tracking-widest mb-2">REACH</p>
+          <div class="flex items-end gap-2 mb-3">
+            <span class="text-[40px] leading-none font-bold text-white tracking-tighter">12</span>
+            <span class="text-[#888] text-[12px] mb-1.5">days sober</span>
+          </div>
+          <div class="flex gap-2">
+            <div class="flex-1 bg-[#333] rounded-xl p-2 text-center">
+              <p class="text-[9px] text-[#888] mb-0.5">Saved</p>
+              <p class="text-[13px] font-semibold text-[#b0ceb4]">€84.20</p>
+            </div>
+            <div class="flex-1 bg-[#4a654f] rounded-xl p-2 flex items-center justify-center">
+              <p class="text-[11px] font-medium text-white leading-tight text-center">Open<br/>toolkit →</p>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder app icon grid -->
+        <div class="grid grid-cols-4 gap-2">
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+        </div>
+        <!-- Dock -->
+        <div class="mt-auto flex justify-center gap-3">
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+          <div class="w-10 h-10 rounded-[12px] bg-[#2a2a2a]"></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="font-label-md text-on-surface font-semibold">Home screen widget</p>
+        <p class="text-[12px] text-on-surface-variant mt-1">Your streak, always visible</p>
+      </div>
+    </div>
+
+    <!-- Phone 3: Gentle nudge notification -->
+    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
+      <div class="relative w-[240px] h-[520px] bg-surface-container-lowest rounded-[40px] border-[5px] border-surface-container-highest shadow-[0_20px_60px_-15px_rgba(141,170,145,0.2)] overflow-hidden flex flex-col p-4 pt-8">
+        <!-- Pill notch -->
+        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-outline-variant/40 rounded-full"></div>
+        <!-- Notification banner -->
+        <div class="w-full bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-3 mb-4 border border-outline-variant/20 flex-shrink-0">
+          <div class="flex items-start gap-2.5">
+            <div class="w-8 h-8 rounded-[10px] bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-white text-[13px] font-bold">R</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between mb-0.5">
+                <p class="text-[11px] font-semibold text-on-surface">Reach</p>
+                <p class="text-[10px] text-on-surface-variant/60">now</p>
+              </div>
+              <p class="text-[11px] text-on-surface font-medium leading-snug">Day 3 · you're doing great 🌿</p>
+              <p class="text-[10px] text-on-surface-variant leading-snug mt-0.5">Your escape plan is one tap away.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Faded home content behind -->
+        <div class="w-full opacity-25 flex flex-col items-center pt-2 text-center">
+          <p class="text-[11px] text-on-surface-variant tracking-wide mb-1">Current streak</p>
+          <div class="text-[46px] leading-none font-bold text-primary tracking-tighter mb-1">3</div>
+          <p class="text-[17px] font-semibold text-on-surface mb-5">days sober</p>
+          <div class="w-full bg-surface-container-low rounded-xl p-3 flex flex-col items-center">
+            <p class="text-[9px] tracking-widest uppercase text-on-surface-variant mb-1">Money saved</p>
+            <p class="text-[18px] font-semibold text-primary">€21.05</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="font-label-md text-on-surface font-semibold">Gentle nudges</p>
+        <p class="text-[12px] text-on-surface-variant mt-1">Check-ins that don't nag</p>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 <!-- Features Section -->
 <section class="w-full bg-surface-container-low border-y border-outline-variant/20 py-24 md:py-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
 <div class="w-full max-w-[960px] flex flex-col">
 <div class="mb-16">
 <span class="text-label-sm tracking-widest text-primary uppercase mb-4 block">The toolkit</span>
 <h2 class="font-headline-xl md:text-[40px] md:leading-[48px] text-on-surface max-w-[600px]">
-                        Six techniques — set up when you're calm, one tap when you're not.
-                    </h2>
+Six techniques — set up when you're calm, one tap when you're not.
+</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-<!-- Feature Card 1 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/phone.svg" class="w-6 h-6" alt="Phone icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Reach out</h3>
-<p class="font-body-md text-on-surface-variant">Pre-configure trusted contacts. A single tap sends a predefined message when you need immediate support.</p>
+<p class="font-body-md text-on-surface-variant">One tap to call or text the person you've chosen. Connection is the opposite of addiction — fastest path is always toward another human.</p>
 </div>
-<!-- Feature Card 2 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/forward.svg" class="w-6 h-6" alt="Forward icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Play the tape forward</h3>
-<p class="font-body-md text-on-surface-variant">Review your personal notes on the realities of a relapse. Ground yourself in long-term consequences over short-term relief.</p>
+<p class="font-body-md text-on-surface-variant">Walk through the next hour, tonight, and tomorrow morning — in your own words, written when you were calm. Not generic consequences. Your life.</p>
 </div>
-<!-- Feature Card 3 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/waves.svg" class="w-6 h-6" alt="Waves icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Urge surfing</h3>
-<p class="font-body-md text-on-surface-variant">A guided breathing exercise designed to help you ride the wave of a craving until it naturally subsides.</p>
+<p class="font-body-md text-on-surface-variant">Urges peak and pass faster than they feel like they will. A guided timer helps you ride it out rather than fight it — often under a minute.</p>
 </div>
-<!-- Feature Card 4 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/support.svg" class="w-6 h-6" alt="Support icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Escape plan</h3>
-<p class="font-body-md text-on-surface-variant">Quickly access your documented strategies for leaving uncomfortable situations or environments safely.</p>
+<p class="font-body-md text-on-surface-variant">Your own sensory-specific rituals — something cold, something for your hands, somewhere to go. Specific, not generic advice you've already tried to ignore.</p>
 </div>
-<!-- Feature Card 5 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/stop.svg" class="w-6 h-6" alt="Stop icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Never romanticize</h3>
-<p class="font-body-md text-on-surface-variant">Read realistic accounts of past struggles that you wrote during moments of clarity to combat euphoric recall.</p>
+<p class="font-body-md text-on-surface-variant">A prompt to stop memory from softening what drinking actually felt like. Not dreading the future — refusing to rewrite the past.</p>
 </div>
-<!-- Feature Card 6 -->
 <div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
 <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/timer.svg" class="w-6 h-6" alt="Timer icon"/></div>
 <h3 class="font-headline-lg text-on-surface mb-2">Timer + real action</h3>
-<p class="font-body-md text-on-surface-variant">Start a 15-minute delay timer paired with a mandatory distraction task to disrupt impulsive behaviors.</p>
+<p class="font-body-md text-on-surface-variant">A clock and a nudge to do something physical. Walk, shower, call someone. No screen required — the app's job is to get you off it.</p>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Quote Section -->
 <section class="w-full px-margin-mobile md:px-margin-desktop py-24 flex justify-center text-center">
 <div class="max-w-[640px] flex flex-col items-center">
 <blockquote class="font-headline-xl text-on-surface mb-6">
-                    "Don't overcomplicate it. The less friction the better."
-                </blockquote>
+"Don't overcomplicate it. The less friction the better."
+</blockquote>
 <cite class="text-on-surface-variant font-body-md not-italic">— r/stopdrinking</cite>
 </div>
 </section>
+
 <!-- Disclaimer -->
 <section class="w-full px-margin-mobile md:px-margin-desktop pb-24 flex justify-center">
 <div class="max-w-[960px] w-full bg-surface-container-low border border-outline-variant/20 rounded-[16px] p-6 text-center md:text-left flex flex-col md:flex-row gap-6 items-center justify-between">
 <p class="font-body-md text-on-surface-variant/80 text-sm max-w-[600px]">
-                    Reach is a self-help tool designed to support personal goals, not medical advice or a replacement for professional treatment. If you are experiencing physical withdrawal symptoms or a medical emergency, seek immediate medical attention.
-                </p>
+Reach is a self-help tool designed to support personal goals, not medical advice or a replacement for professional treatment. If you are experiencing physical withdrawal symptoms or a medical emergency, seek immediate medical attention.
+</p>
 <div class="flex flex-col gap-2 text-sm text-on-surface-variant min-w-[200px]">
 <div class="flex items-center gap-2 justify-center md:justify-start">
-<img src="assets/phone.svg" class="w-4 h-4" alt="Phone"/>
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
 <span>Call or text <strong class="text-on-surface">988</strong> (US)</span>
 </div>
 <div class="flex items-center gap-2 justify-center md:justify-start">
@@ -234,15 +341,17 @@
 </div>
 </div>
 </section>
+
 </main>
+
 <!-- Footer -->
 <footer class="w-full border-t border-outline-variant/20 py-8 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-background">
 <div class="flex gap-6">
-<a class="font-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="privacy.html">Privacy Policy</a>
 <a class="font-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact</a>
 </div>
 <p class="font-label-md text-on-surface-variant/60 text-center md:text-right">
-            © 2026 Reach. Made with care for people doing something hard.
-        </p>
+© 2026 Reach. Made with care for people doing something hard.
+</p>
 </footer>
 </body></html>
