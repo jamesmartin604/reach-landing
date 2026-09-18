@@ -1,266 +1,660 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reach - Built for the moment, not the milestone</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "tertiary": "#835422",
-                        "surface-container-high": "#eae8e4",
-                        "tertiary-container": "#d1975f",
-                        "on-surface-variant": "#424842",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-highest": "#e4e2de",
-                        "primary-fixed": "#cceacf",
-                        "on-error": "#ffffff",
-                        "tertiary-fixed": "#ffdcbf",
-                        "primary": "#4a654f",
-                        "surface-container": "#efeeea",
-                        "surface-variant": "#e4e2de",
-                        "on-primary-fixed-variant": "#334d38",
-                        "error-container": "#ffdad6",
-                        "on-background": "#1b1c1a",
-                        "inverse-primary": "#b0ceb4",
-                        "outline": "#737972",
-                        "primary-fixed-dim": "#b0ceb4",
-                        "secondary-container": "#fdad98",
-                        "secondary-fixed-dim": "#ffb5a1",
-                        "surface-dim": "#dbdad6",
-                        "tertiary-fixed-dim": "#f8ba7f",
-                        "on-tertiary-fixed-variant": "#673d0c",
-                        "outline-variant": "#c2c8c0",
-                        "on-tertiary-fixed": "#2d1600",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-fixed": "#ffdbd1",
-                        "secondary": "#8b4e3d",
-                        "inverse-surface": "#30312e",
-                        "on-primary": "#ffffff",
-                        "on-secondary-container": "#783f2f",
-                        "error": "#ba1a1a",
-                        "surface": "#fbf9f5",
-                        "on-surface": "#1b1c1a",
-                        "surface-tint": "#4a654f",
-                        "background": "#fbf9f5",
-                        "on-secondary-fixed-variant": "#6f3728",
-                        "on-error-container": "#93000a",
-                        "on-primary-container": "#253f2b",
-                        "surface-bright": "#fbf9f5",
-                        "surface-container-low": "#f5f3ef",
-                        "inverse-on-surface": "#f2f0ed",
-                        "on-tertiary-container": "#573000",
-                        "on-secondary-fixed": "#380d03",
-                        "primary-container": "#8daa91",
-                        "on-primary-fixed": "#062010",
-                        "on-secondary": "#ffffff"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "1rem",
-                        "lg": "2rem",
-                        "xl": "3rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "margin-mobile": "24px",
-                        "margin-desktop": "48px",
-                        "base": "8px",
-                        "stack-lg": "40px",
-                        "stack-md": "24px",
-                        "gutter": "16px",
-                        "stack-sm": "12px"
-                    },
-                    fontFamily: {
-                        "body-md": ["Outfit"],
-                        "headline-lg": ["Outfit"],
-                        "body-lg": ["Outfit"],
-                        "headline-xl": ["Outfit"],
-                        "label-sm": ["Outfit"],
-                        "headline-lg-mobile": ["Outfit"],
-                        "label-md": ["Outfit"]
-                    },
-                    fontSize: {
-                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }],
-                        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
-                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0.01em", fontWeight: "400" }],
-                        "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
-                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }],
-                        "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
-                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }]
-                    }
-                }
-            }
-        };
-    </script>
+<meta name="description" content="A distraction-free toolkit for the fifteen minutes a craving actually lasts. Set up while you’re calm, one tap away when it hits.">
+<meta name="theme-color" content="#fbf9f5">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap">
+<script>
+  // Arm scroll-reveal before first paint so revealed content doesn't flash in, then hide.
+  if ('IntersectionObserver' in window) document.documentElement.classList.add('reveal-ready');
+</script>
+<style>
+  /* ---- Tokens: DESIGN.md (Serene Grounding) ---- */
+  :root {
+    --surface: #fbf9f5;
+    --surface-container-low: #f5f3ef;
+    --surface-container-highest: #e4e2de;
+    --on-surface: #1b1c1a;
+    --on-surface-variant: #424842;
+    --inverse-surface: #30312e;
+    --inverse-on-surface: #f2f0ed;
+    --outline-variant: #c2c8c0;
+    --primary: #4a654f;
+    --on-primary: #ffffff;
+    --primary-container: #8daa91;
+    --on-primary-container: #253f2b;
+    --inverse-primary: #b0ceb4;
+    --on-primary-fixed-variant: #334d38;
+    --secondary: #8b4e3d;
+    --secondary-container: #fdad98;
+    --tertiary-container: #d1975f;
+    --on-tertiary-container: #573000;
+
+    --rounded-sm: 0.5rem;
+    --rounded-md: 1.5rem;
+    --rounded-lg: 2rem;
+    --rounded-xl: 3rem;
+    --rounded-full: 9999px;
+
+    --font: Outfit, "Segoe UI", system-ui, sans-serif;
+
+    --page-x: clamp(48px, 6.667vw, 96px);
+    --ease-out: cubic-bezier(.22, .61, .36, 1);
+    /* Ease-out-quart: a long, soft settle with no overshoot. */
+    --ease-reveal: cubic-bezier(.25, 1, .5, 1);
+    --reveal-duration: 760ms;
+    --reveal-rise: 40px;
+    --reveal-scale: 0.96;
+    --hover-duration: 450ms;
+    /* Ambient shadows tinted with primary, per DESIGN.md "Elevation & Depth" */
+    --shadow-lift: 0 32px 56px color-mix(in srgb, var(--primary) 14%, transparent);
+    --shadow-btn: 0 12px 24px color-mix(in srgb, var(--primary) 22%, transparent);
+  }
+
+  /* ---- Base ---- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img, svg { display: block; max-width: 100%; }
+  h1, h2, h3, p, blockquote, figure { margin: 0; }
+  a { color: var(--primary); }
+  a:hover { color: var(--on-primary-fixed-variant); }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+  .wrap { max-width: 1440px; margin-inline: auto; padding-inline: var(--page-x); }
+
+  /* SVG accents: token colours for the non-currentColor strokes/fills */
+  .f-primary { fill: var(--primary); }
+  .f-primary-container { fill: var(--primary-container); }
+  .f-secondary { fill: var(--secondary); }
+  .f-secondary-container { fill: var(--secondary-container); }
+  .f-tertiary-container { fill: var(--tertiary-container); }
+  .f-inverse-primary { fill: var(--inverse-primary); }
+  .s-primary { stroke: var(--primary); }
+  .s-secondary { stroke: var(--secondary); }
+  .s-on-tertiary-container { stroke: var(--on-tertiary-container); }
+  .s-inverse-primary { stroke: var(--inverse-primary); }
+
+  /* ---- Buttons ---- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: var(--rounded-full);
+    background: var(--primary);
+    color: var(--on-primary);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 300ms var(--ease-out), background-color 300ms ease, box-shadow 300ms ease;
+  }
+  .btn:hover {
+    color: var(--on-primary);
+    background: var(--on-primary-fixed-variant);
+    box-shadow: var(--shadow-btn);
+    transform: translateY(-3px);
+  }
+  .btn--sm { height: 46px; padding: 0 22px; font-size: 15px; }
+  .btn--lg { height: 60px; padding: 0 32px; font-size: 18px; }
+  .btn__icon { flex: none; width: 20px; height: 24px; }
+
+  /* ---- Header ---- */
+  .site-header { border-bottom: 1px solid var(--surface-container-highest); }
+  .site-header__inner { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--on-surface);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .brand:hover { color: var(--on-surface); }
+  .brand__icon { width: 28px; height: 28px; border-radius: var(--rounded-sm); }
+  .site-nav { display: flex; align-items: center; gap: 32px; }
+  .text-link { font-size: 16px; color: var(--on-surface-variant); text-decoration: none; text-underline-offset: 4px; }
+  .text-link:hover { color: var(--on-primary-fixed-variant); text-decoration: underline; }
+
+  /* ---- Hero ---- */
+  .hero { padding-block: 72px 96px; display: flex; align-items: center; gap: 72px; }
+  .hero__copy { flex: 1 1 640px; max-width: 640px; display: flex; flex-direction: column; align-items: flex-start; }
+  .hero__title { font-size: clamp(52px, 5vw, 72px); line-height: 1.084; font-weight: 600; letter-spacing: -0.03em; text-wrap: pretty; }
+  .hero__lede { margin-top: 28px; max-width: 520px; font-size: 20px; line-height: 32px; color: var(--on-surface-variant); text-wrap: pretty; }
+  .hero__cta { margin-top: 36px; }
+  .hero__note { margin-top: 20px; font-size: 14px; font-weight: 500; letter-spacing: 0.05em; color: var(--on-surface-variant); }
+  .hero__price { margin-top: 6px; font-size: 13px; line-height: 18px; color: var(--on-surface-variant); }
+  .hero__art { flex: 0 1 480px; min-width: 0; color: var(--on-surface); }
+  .hero__art svg { width: 100%; height: auto; }
+
+  /* ---- Section headings ---- */
+  .section-title { font-size: clamp(34px, 3.06vw, 44px); line-height: 1.18; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+  .section-lede { font-size: 18px; line-height: 28px; color: var(--on-surface-variant); text-wrap: pretty; }
+
+  /* ---- Screenshot showcase ---- */
+  .showcase { padding-block: 40px 120px; display: flex; flex-direction: column; align-items: center; }
+  .showcase__head { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .showcase__head .section-lede { margin-top: 16px; max-width: 640px; }
+  .shots { width: 100%; margin-top: 56px; display: flex; justify-content: center; align-items: flex-start; gap: clamp(24px, 3.333vw, 48px); }
+  .shot { flex: 0 1 260px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  /* Device frames are baked into the images, on the page background colour, so no box or shadow is needed. */
+  .shot__img { width: 100%; height: auto; transition: transform var(--hover-duration) var(--ease-out); }
+  .shot__caption { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+  .shot__title { font-size: 15px; line-height: 22px; font-weight: 600; color: var(--on-surface); }
+  .shot__sub { font-size: 13px; line-height: 18px; color: var(--on-surface-variant); }
+
+  /* ---- Toolkit ---- */
+  .toolkit { padding-block: 40px 120px; }
+  .toolkit__head { display: flex; align-items: flex-end; gap: 64px; }
+  .toolkit__intro { flex: 1 1 auto; }
+  .toolkit__title { margin-top: 20px; max-width: 620px; }
+  .toolkit__head .section-lede { flex: 0 1 440px; }
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--rounded-full);
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cards { margin: 56px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+  .card {
+    --arrow-ink: var(--surface);
+    min-height: 400px;
+    padding: 36px;
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--rounded-lg);
+    background: var(--surface);
+    color: var(--on-surface);
+    display: flex;
+    flex-direction: column;
+  }
+  .card--sage { background: var(--primary-container); border-color: var(--primary-container); }
+  .card--charcoal {
+    --arrow-ink: var(--on-surface);
+    background: var(--inverse-surface);
+    border-color: var(--inverse-surface);
+    color: var(--inverse-on-surface);
+  }
+  .card__art { flex: none; width: 96px; height: 96px; }
+  .card__title { margin-top: 24px; font-size: 26px; line-height: 34px; font-weight: 600; }
+  .card__body { margin: 14px 0 24px; font-size: 16px; line-height: 26px; color: var(--on-surface-variant); }
+  .card--sage .card__body { color: var(--on-primary-container); }
+  .card--charcoal .card__body { color: var(--outline-variant); }
+  .card__arrow {
+    margin-top: auto;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--rounded-full);
+    background: currentColor;
+    display: grid;
+    place-items: center;
+    transition: transform var(--hover-duration) var(--ease-out);
+  }
+  .card__arrow svg { width: 18px; height: 18px; stroke: var(--arrow-ink); }
+
+  .hl { padding: 0 6px; border-radius: var(--rounded-sm); color: var(--on-surface); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .hl--sage { background: var(--primary-container); }
+  .hl--peach { background: var(--secondary-container); }
+  .hl--cream { background: var(--surface); }
+
+  /* ---- Testimonial ---- */
+  .quote { padding-block: 0 120px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .quote__mark { width: 44px; height: 36px; }
+  .quote__text { margin-top: 28px; max-width: 880px; font-size: clamp(30px, 2.78vw, 40px); line-height: 1.3; font-weight: 500; letter-spacing: -0.02em; }
+  .quote__text p { margin: 0; }
+  .quote__cite { margin-top: 24px; font-size: 16px; color: var(--on-surface-variant); }
+
+  /* ---- Closing CTA ---- */
+  .closing { padding-block: 0 96px; }
+  .closing__panel { display: flex; align-items: center; gap: 64px; padding: 64px 72px; border-radius: var(--rounded-xl); background: var(--surface-container-low); }
+  .closing__copy { flex: 1 1 auto; }
+  .closing__title { max-width: 560px; font-size: clamp(32px, 2.78vw, 40px); line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; }
+  .closing__lede { margin-top: 16px; max-width: 520px; }
+  .closing__cta { margin-top: 32px; }
+  .closing__art { flex: 0 0 260px; color: var(--on-surface); }
+  .closing__art svg { width: 100%; height: auto; }
+
+  /* ---- Safety + footer ---- */
+  .safety { padding-block: 0 40px; }
+  .safety__inner {
+    border-top: 1px solid var(--surface-container-highest);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--on-surface-variant);
+  }
+  .safety__disclaimer { max-width: 900px; }
+  .safety strong { font-weight: 600; color: var(--on-surface); }
+  .crisis { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; }
+  .crisis li + li::before { content: "·" / ""; margin-inline: 8px; }
+  .crisis a { font-weight: 500; text-underline-offset: 3px; }
+
+  .footer-bar { padding-block: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .footer-bar__brand { display: flex; align-items: center; gap: 12px; font-size: 16px; color: var(--on-surface-variant); }
+  .footer-bar__icon { width: 24px; height: 24px; border-radius: var(--rounded-sm); }
+  .footer-bar__links { display: flex; flex-wrap: wrap; gap: 32px; }
+
+  /* ---- Motion: scroll reveal + hover ---- */
+  [data-reveal] {
+    transition:
+      opacity var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms),
+      translate var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms),
+      scale var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms);
+  }
+  .reveal-ready [data-reveal]:not(.is-in) { opacity: 0; translate: 0 var(--reveal-rise); }
+  .reveal-ready .card:not(.is-in),
+  .reveal-ready .shot:not(.is-in) { scale: var(--reveal-scale); }
+
+  /* Cards reveal via `translate`/`scale` and lift via `transform`, so the stagger delay never lags the hover. */
+  .card {
+    transition:
+      opacity var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms),
+      translate var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms),
+      scale var(--reveal-duration) var(--ease-reveal) var(--reveal-delay, 0ms),
+      transform var(--hover-duration) var(--ease-out),
+      box-shadow var(--hover-duration) ease,
+      border-color var(--hover-duration) ease;
+  }
+  @media (hover: hover) {
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lift); border-color: var(--primary); }
+    .card:hover .card__arrow { transform: translate(5px, -5px); }
+    .shot:hover .shot__img { transform: translateY(-10px); }
+  }
+  @media (hover: none) {
+    .card:active { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+  }
+
+  /* ---- Tablet ---- */
+  @media (max-width: 1023px) {
+    .hero { flex-direction: column; align-items: stretch; gap: 48px; }
+    .hero__copy { flex: none; }
+    .hero__art { flex: none; width: 100%; max-width: 480px; margin-inline: auto; }
+    .toolkit__head { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .toolkit__head .section-lede { flex: none; max-width: 560px; }
+    .closing__panel { padding: 48px; }
+    .closing__art { display: none; }
+  }
+
+  /* ---- Mobile ---- */
+  @media (max-width: 767px) {
+    .wrap { padding-inline: 24px; }
+
+    .site-header__inner { height: 72px; }
+    .brand { gap: 10px; font-size: 19px; }
+    .brand__icon { width: 24px; height: 24px; }
+    .site-nav .text-link { display: none; }
+    .btn--sm { height: 44px; padding: 0 20px; }
+    .btn--lg { width: 100%; height: 58px; padding: 0 24px; gap: 10px; font-size: 17px; }
+    .btn__icon { width: 18px; height: 22px; }
+
+    .hero { padding-block: 40px 0; gap: 36px; }
+    .hero__title { font-size: 40px; line-height: 46px; }
+    .hero__lede { margin-top: 20px; font-size: 17px; line-height: 27px; }
+    .hero__cta { margin-top: 28px; }
+    .hero__note { margin-top: 16px; align-self: center; font-size: 13px; text-align: center; }
+    .hero__price { align-self: center; font-size: 12px; text-align: center; }
+    .hero__art { max-width: 342px; }
+    .hero__art svg { stroke-width: 3; }
+
+    .section-title { font-size: 32px; line-height: 40px; }
+    .section-lede { font-size: 16px; line-height: 26px; }
+
+    .showcase { padding-block: 40px 0; }
+    .showcase__head .section-lede { margin-top: 14px; }
+    /* Screenshots become a swipeable row that bleeds to the screen edges.
+       Bottom padding leaves room for the reveal rise, which overflow-y would otherwise clip. */
+    .shots {
+      align-self: stretch;
+      width: auto;
+      margin: 28px -24px 0;
+      padding: 0 24px 40px;
+      justify-content: flex-start;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 24px;
+    }
+    .shot { flex: 0 0 240px; gap: 16px; scroll-snap-align: start; }
+
+    .toolkit { padding-block: 12px 0; }
+    .toolkit__head { gap: 14px; }
+    .toolkit__title { margin-top: 16px; }
+    .eyebrow { padding: 6px 14px; font-size: 12px; }
+    .cards { margin-top: 28px; grid-template-columns: 1fr; gap: 16px; }
+    .card { min-height: 0; padding: 26px; border-radius: var(--rounded-md); }
+    .card__art { width: 64px; height: 64px; stroke-width: 2.5; }
+    .card__title { margin-top: 16px; font-size: 22px; line-height: 30px; }
+    .card__body { margin: 10px 0 0; font-size: 15px; line-height: 25px; }
+    .card__arrow { display: none; }
+
+    .quote { padding-block: 56px 16px; }
+    .quote__mark { width: 36px; height: 30px; }
+    .quote__text { margin-top: 20px; font-size: 28px; line-height: 36px; }
+    .quote__cite { margin-top: 16px; font-size: 15px; line-height: 22px; }
+
+    .closing { padding-block: 40px 0; }
+    .closing__panel { padding: 36px 28px; border-radius: var(--rounded-lg); }
+    .closing__title { font-size: 28px; line-height: 36px; }
+    .closing__lede { margin-top: 14px; }
+    .closing__cta { margin-top: 24px; height: 56px; }
+
+    .safety { padding-block: 32px 28px; }
+    .safety__inner { padding-top: 24px; font-size: 14px; line-height: 23px; }
+    .footer-bar { padding-block: 0 32px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-bar__links { gap: 24px; }
+  }
+
+  /* ---- Reduced motion: opacity-only reveal, no movement ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-ready [data-reveal]:not(.is-in) { translate: none; scale: none; }
+    .btn:hover,
+    .card:hover,
+    .card:active,
+    .card:hover .card__arrow,
+    .shot:hover .shot__img { transform: none; }
+  }
+
+  @media print {
+    .reveal-ready [data-reveal]:not(.is-in) { opacity: 1; translate: none; scale: none; }
+  }
+</style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
+<body>
 
-<!-- Top Navigation -->
-<nav class="w-full flex justify-center py-6 px-margin-mobile md:px-margin-desktop sticky top-0 bg-background/90 backdrop-blur-sm z-50">
-<div class="w-full max-w-[960px] flex items-center justify-between">
-<a class="text-[18px] font-semibold text-primary tracking-tight hover:opacity-80 transition-opacity" href="#">Reach</a>
-<a class="text-on-surface-variant text-label-md hover:text-on-surface transition-colors" href="privacy.html">Privacy</a>
-</div>
-</nav>
-
-<main class="flex-grow flex flex-col items-center w-full">
-
-<!-- Hero Section -->
-<section class="w-full px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-12 md:pb-16 flex flex-col items-center text-center">
-<div class="max-w-[720px] flex flex-col items-center">
-<h1 class="font-headline-xl md:text-[56px] md:leading-[64px] tracking-tight mb-6 text-on-surface">
-Built for the moment,<br class="hidden md:block"/> not the milestone
-</h1>
-<p class="font-body-lg text-on-surface-variant max-w-[600px] mb-10">
-A distraction-free toolkit designed to help you navigate cravings and build resilience, one urge at a time.
-</p>
-<a class="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-on-primary px-8 py-4 rounded-full font-label-md transition-all active:scale-95 shadow-[0_4px_20px_0_rgba(74,101,79,0.15)] mb-4" href="https://apps.apple.com/us/app/reach-quit-drinking-toolkit/id6802081043">
-<svg class="w-5 h-5 fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-Download on the App Store
-</a>
-<p class="text-label-sm text-on-surface-variant/70">
-Free 14-day trial. €39.99/year after.
-</p>
-</div>
-</section>
-
-<!-- Phone Mockups — three column -->
-<section class="w-full pb-24 md:pb-32">
-
-  <!-- Section header -->
-  <div class="text-center mb-14 px-margin-mobile">
-    <span class="text-label-sm tracking-widest text-primary uppercase mb-4 block">See it in action</span>
-    <h2 class="font-headline-xl text-on-surface">Everything within reach</h2>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/">
+      <img class="brand__icon" src="assets/icon-96.png" width="28" height="28" alt="">
+      Reach
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="text-link" href="support.html">Support</a>
+      <a class="text-link" href="privacy.html">Privacy</a>
+      <a class="btn btn--sm" href="https://apps.apple.com/us/app/reach-quit-drinking-toolkit/id6802081043">Get Reach</a>
+    </nav>
   </div>
+</header>
 
-  <!-- Horizontal scroll on mobile, centred row on desktop -->
-  <div class="flex gap-8 overflow-x-auto pb-6 px-margin-mobile md:px-margin-desktop md:justify-center snap-x snap-mandatory">
+<main>
 
+  <section class="wrap hero">
+    <div class="hero__copy" data-reveal>
+      <h1 class="hero__title">Built for the moment, not the milestone.</h1>
+      <p class="hero__lede">A distraction-free toolkit for the fifteen minutes a craving actually lasts. Set up while you’re calm, one tap away when it hits.</p>
+      <a class="btn btn--lg hero__cta" href="https://apps.apple.com/us/app/reach-quit-drinking-toolkit/id6802081043">
+        <svg class="btn__icon" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M16.3 12.7c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.5 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.7 1.4-.05 1.9-.9 3.5-.9s2.1.9 3.6.85c1.5 0 2.4-1.3 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.05 0-2.9-1.1-2.9-4.3z"/>
+          <path d="M13.6 4.6c.75-.9 1.25-2.2 1.1-3.5-1.1.05-2.4.75-3.2 1.65-.7.8-1.3 2.1-1.15 3.3 1.2.1 2.45-.6 3.25-1.45z"/>
+        </svg>
+        Download on the App Store
+      </a>
+      <p class="hero__note">Built from months of r/stopdrinking research</p>
+      <p class="hero__price">Free 14-day trial. €39.99/year after.</p>
+    </div>
+    <div class="hero__art" data-reveal>
+      <svg width="480" height="360" viewBox="0 0 480 360" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M30 96C70 22 110 170 150 96c40-74 80 74 120 0 40-74 80 58 150 30"/>
+        <path class="s-secondary" d="M30 178c44-34 88 34 132 0s88 26 132 6c44-20 110 8 156-4"/>
+        <path class="s-primary" d="M30 252c60-10 120 8 180 0s130 12 240 2"/>
+        <path class="s-primary" d="M30 312h420"/>
+        <circle class="f-primary" cx="330" cy="313" r="9" stroke="none"/>
+        <circle class="f-primary-container" cx="86" cy="48" r="7" stroke="none"/>
+        <circle class="f-secondary-container" cx="416" cy="122" r="10" stroke="none"/>
+        <circle class="f-tertiary-container" cx="240" cy="338" r="5" stroke="none"/>
+        <rect class="f-primary-container" x="380" y="236" width="34" height="14" rx="7" stroke="none"/>
+      </svg>
+    </div>
+  </section>
 
+  <section class="wrap showcase" aria-labelledby="showcase-title">
+    <div class="showcase__head" data-reveal>
+      <h2 class="section-title" id="showcase-title">The whole app is the craving moment</h2>
+      <p class="section-lede">Everything else is a day counter. This is what’s there when the counter isn’t enough.</p>
+    </div>
+    <div class="shots" role="region" aria-label="App screenshots">
+      <figure class="shot" data-reveal>
+        <img class="shot__img" src="assets/screenshots/widget.webp" width="481" height="974" loading="lazy" decoding="async"
+             alt="Reach widgets on an iPhone, showing 18 minutes sober, €1.18 saved and an Open toolkit button.">
+        <figcaption class="shot__caption">
+          <span class="shot__title">Home screen widget</span>
+          <span class="shot__sub">Your streak, always visible</span>
+        </figcaption>
+      </figure>
+      <figure class="shot" data-reveal>
+        <img class="shot__img" src="assets/screenshots/home.webp" width="481" height="974" loading="lazy" decoding="async"
+             alt="Reach home screen showing 8 days sober, €52.1 saved, 196 hours freed and a Reach for help button.">
+        <figcaption class="shot__caption">
+          <span class="shot__title">Home screen</span>
+          <span class="shot__sub">Streak, savings &amp; one-tap help</span>
+        </figcaption>
+      </figure>
+      <figure class="shot" data-reveal>
+        <img class="shot__img" src="assets/screenshots/nudges.webp" width="481" height="974" loading="lazy" decoding="async"
+             alt="iPhone Notification Centre with two Reach notifications: “How’s tonight going? Open Reach if a craving hits.” and “One week. Seven days of choosing yourself.”">
+        <figcaption class="shot__caption">
+          <span class="shot__title">Gentle nudges</span>
+          <span class="shot__sub">Check-ins that don’t nag</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
-    <!-- Phone 1: Widget (dark iOS home screen) -->
-    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
-      <img src="assets/iphone-widget.png" alt="Reach home screen widget" class="w-[240px]"/>
-      <div class="text-center">
-        <p class="font-label-md text-on-surface font-semibold">Home screen widget</p>
-        <p class="text-[12px] text-on-surface-variant mt-1">Your streak, always visible</p>
+  <section class="wrap toolkit" aria-labelledby="toolkit-title">
+    <div class="toolkit__head" data-reveal>
+      <div class="toolkit__intro">
+        <p class="eyebrow">The toolkit</p>
+        <h2 class="section-title toolkit__title" id="toolkit-title">Six things that actually work</h2>
+      </div>
+      <p class="section-lede">Not theory. These came from people in recovery describing what got them through the moment. You set yours up while you’re calm.</p>
+    </div>
+
+    <ul class="cards">
+      <li class="card" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="6" y="14" width="40" height="28" rx="10"/>
+          <path d="M16 42v9l10-9"/>
+          <rect x="50" y="52" width="40" height="28" rx="10"/>
+          <path d="M80 52v-9l-10 9"/>
+          <path d="M46 34c10 2 4 12 12 16" stroke-dasharray="1 7"/>
+          <circle class="f-primary" cx="53" cy="44" r="5" stroke="none"/>
+        </svg>
+        <h3 class="card__title"><span class="hl hl--sage">Reach out</span></h3>
+        <p class="card__body">One tap to the person you chose before you needed them. A text or a call, not another screen to disappear into.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+
+      <li class="card card--sage" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="8" y="26" width="20" height="34" rx="5"/>
+          <rect x="38" y="26" width="20" height="34" rx="5"/>
+          <rect x="68" y="26" width="20" height="34" rx="5"/>
+          <path class="s-on-tertiary-container" d="M10 78h70"/>
+          <path class="s-on-tertiary-container" d="M72 71l8 7-8 7"/>
+        </svg>
+        <h3 class="card__title">Play the tape <span class="hl hl--cream">forward</span></h3>
+        <p class="card__body">Your brain only shows you the first sip. This shows you the rest of the night. In your own words, written while you were clear-headed.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+
+      <li class="card card--charcoal" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path class="f-primary" d="M6 76c20 0 22-56 42-56s22 56 42 56z" fill-opacity="0.55" stroke="none"/>
+          <path d="M6 76c20 0 22-56 42-56s22 56 42 56"/>
+          <circle class="f-inverse-primary" cx="48" cy="20" r="6" stroke="none"/>
+        </svg>
+        <h3 class="card__title">Urge surfing</h3>
+        <p class="card__body">A craving peaks in about 90 seconds, then it drops on its own. A timer and something to hold onto until it does.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+
+      <li class="card" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="76" r="5" fill="currentColor" stroke="none"/>
+          <path d="M20 73c16 0 24-9 36-18" stroke-dasharray="1 8"/>
+          <path class="s-secondary" d="M64 18a15 15 0 0 0-15 15c0 11 15 25 15 25s15-14 15-25a15 15 0 0 0-15-15z"/>
+          <circle class="f-secondary" cx="64" cy="33" r="5.5" stroke="none"/>
+        </svg>
+        <h3 class="card__title"><span class="hl hl--peach">Escape plan</span></h3>
+        <p class="card__body">The two or three things that actually work for you: something cold in your hand, the kettle on, out the front door. Decided in advance.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+
+      <li class="card card--sage" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="16" y="12" width="64" height="72" rx="7"/>
+          <rect x="27" y="23" width="42" height="50" rx="3"/>
+          <path class="s-on-tertiary-container" d="M41 23l12 21-10 8 13 21"/>
+        </svg>
+        <h3 class="card__title">Never <span class="hl hl--cream">romanticize</span></h3>
+        <p class="card__body">The part memory quietly edits out. Kept in your own words, so it’s there when the craving starts making promises.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+
+      <li class="card card--charcoal" data-reveal>
+        <svg class="card__art" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="42" cy="54" r="26"/>
+          <path d="M42 38v16l11 7"/>
+          <path d="M34 22h16"/>
+          <path d="M42 22v6"/>
+          <path class="s-inverse-primary" d="M66 34l18-16"/>
+          <path class="s-inverse-primary" d="M74 16h11v11"/>
+        </svg>
+        <h3 class="card__title">Timer + real action</h3>
+        <p class="card__body">When the next ten minutes just need to be occupied by something real. No feeds, no scrolling, nothing to hide behind.</p>
+        <span class="card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <figure class="wrap quote" data-reveal>
+    <svg class="quote__mark f-primary-container" width="44" height="36" viewBox="0 0 44 36" aria-hidden="true" focusable="false">
+      <path d="M0 36V20C0 9 6 1.5 17 0l2 6c-6 1.5-9 5.5-9 11h9v19H0zm25 0V20C25 9 31 1.5 42 0l2 6c-6 1.5-9 5.5-9 11h9v19H25z"/>
+    </svg>
+    <blockquote class="quote__text">
+      <p>Connection is the opposite of addiction.</p>
+    </blockquote>
+    <figcaption class="quote__cite">One of the r/stopdrinking comments Reach was built from</figcaption>
+  </figure>
+
+  <section class="wrap closing" aria-labelledby="closing-title" data-reveal>
+    <div class="closing__panel">
+      <div class="closing__copy">
+        <h2 class="closing__title" id="closing-title">Have it set up before you need it</h2>
+        <p class="section-lede closing__lede">A craving is a bad time to start working out what helps. Ten minutes now, while things are quiet.</p>
+        <a class="btn btn--lg closing__cta" href="https://apps.apple.com/us/app/reach-quit-drinking-toolkit/id6802081043">
+          <svg class="btn__icon" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M16.3 12.7c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.5 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.7 1.4-.05 1.9-.9 3.5-.9s2.1.9 3.6.85c1.5 0 2.4-1.3 3.3-2.7 1-1.5 1.5-3 1.5-3.1-.05 0-2.9-1.1-2.9-4.3z"/>
+            <path d="M13.6 4.6c.75-.9 1.25-2.2 1.1-3.5-1.1.05-2.4.75-3.2 1.65-.7.8-1.3 2.1-1.15 3.3 1.2.1 2.45-.6 3.25-1.45z"/>
+          </svg>
+          Download on the App Store
+        </a>
+      </div>
+      <div class="closing__art">
+        <svg width="260" height="200" viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M16 56C42 12 68 100 94 56c26-44 52 44 80 0 26-42 44 34 70 16"/>
+          <path class="s-primary" d="M16 116c34-8 68 12 102 4s90 8 126 0"/>
+          <path class="s-primary" d="M16 164h228"/>
+          <circle class="f-primary" cx="178" cy="165" r="7" stroke="none"/>
+          <circle class="f-secondary-container" cx="52" cy="24" r="6" stroke="none"/>
+          <circle class="f-primary-container" cx="224" cy="86" r="7" stroke="none"/>
+        </svg>
       </div>
     </div>
-  
-    <!-- Phone 2: Home screen -->
-    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
-      <img src="assets/iphone-home.png" alt="Reach home screen" class="w-[240px]"/>
-      <div class="text-center">
-        <p class="font-label-md text-on-surface font-semibold">Home screen</p>
-        <p class="text-[12px] text-on-surface-variant mt-1">Streak, savings &amp; one-tap help</p>
-      </div>
-    </div>
-
-    <!-- Phone 3: Gentle nudge notification -->
-    <div class="flex flex-col items-center gap-5 flex-shrink-0 snap-center">
-      <img src="assets/screen3.png" alt="Reach gentle nudge notification" class="w-[240px]"/>
-      <div class="text-center">
-        <p class="font-label-md text-on-surface font-semibold">Gentle nudges</p>
-        <p class="text-[12px] text-on-surface-variant mt-1">Check-ins that don't nag</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Features Section -->
-<section class="w-full bg-surface-container-low border-y border-outline-variant/20 py-24 md:py-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
-<div class="w-full max-w-[960px] flex flex-col">
-<div class="mb-16">
-<span class="text-label-sm tracking-widest text-primary uppercase mb-4 block">The toolkit</span>
-<h2 class="font-headline-xl md:text-[40px] md:leading-[48px] text-on-surface max-w-[600px]">
-Six techniques. Set up when you're calm, one tap when you're not.
-</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/phone.svg" class="w-6 h-6" alt="Phone icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Reach out</h3>
-<p class="font-body-md text-on-surface-variant">One tap to call or text the person you've chosen. Connection is the opposite of addiction. The fastest path is always toward another human.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/forward.svg" class="w-6 h-6" alt="Forward icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Play the tape forward</h3>
-<p class="font-body-md text-on-surface-variant">Walk through the next hour, tonight, and tomorrow morning, in your own words, written when you were calm. Not generic consequences. Your life.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/waves.svg" class="w-6 h-6" alt="Waves icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Urge surfing</h3>
-<p class="font-body-md text-on-surface-variant">Urges peak and pass faster than they feel like they will. A guided timer helps you ride it out rather than fight it.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/support.svg" class="w-6 h-6" alt="Support icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Escape plan</h3>
-<p class="font-body-md text-on-surface-variant">Your own sensory-specific rituals: something cold, something for your hands, somewhere to go. Specific, not generic advice you've already tried to ignore.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/stop.svg" class="w-6 h-6" alt="Stop icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Never romanticize</h3>
-<p class="font-body-md text-on-surface-variant">A prompt to stop memory from softening what drinking actually felt like. Not dreading the future, refusing to rewrite the past.</p>
-</div>
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/20 p-[28px] hover:shadow-[0_8px_30px_0_rgba(141,170,145,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6"><img src="assets/timer.svg" class="w-6 h-6" alt="Timer icon"/></div>
-<h3 class="font-headline-lg text-on-surface mb-2">Timer + real action</h3>
-<p class="font-body-md text-on-surface-variant">A clock and a nudge to do something physical. Walk, shower, call someone.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Quote Section -->
-<section class="w-full px-margin-mobile md:px-margin-desktop py-24 flex justify-center text-center">
-<div class="max-w-[640px] flex flex-col items-center">
-<blockquote class="font-headline-xl text-on-surface mb-6">
-"Don't overcomplicate it. The less friction the better."
-</blockquote>
-<cite class="text-on-surface-variant font-body-md not-italic">— r/stopdrinking</cite>
-</div>
-</section>
-
-<!-- Disclaimer -->
-<section class="w-full px-margin-mobile md:px-margin-desktop pb-24 flex justify-center">
-<div class="max-w-[960px] w-full bg-surface-container-low border border-outline-variant/20 rounded-[16px] p-6 text-center md:text-left flex flex-col md:flex-row gap-6 items-center justify-between">
-<p class="font-body-md text-on-surface-variant/80 text-sm max-w-[600px]">
-Reach is a self-help tool designed to support personal goals, not medical advice or a replacement for professional treatment. If you are experiencing physical withdrawal symptoms or a medical emergency, seek immediate medical attention.
-</p>
-<div class="flex flex-col gap-2 text-sm text-on-surface-variant min-w-[200px]">
-<div class="flex items-center gap-2 justify-center md:justify-start">
-<span class="material-symbols-outlined text-[16px] text-primary">call</span>
-<span>Call or text <strong class="text-on-surface">988</strong> (US)</span>
-</div>
-<div class="flex items-center gap-2 justify-center md:justify-start">
-<span class="material-symbols-outlined text-[16px] text-primary">public</span>
-<a class="hover:text-primary transition-colors underline decoration-outline-variant/30 underline-offset-4" href="https://samhsa.gov">samhsa.gov</a>
-</div>
-</div>
-</div>
-</section>
+  </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="w-full border-t border-outline-variant/20 py-8 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-background">
-<div class="flex gap-6">
-<a class="font-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="privacy.html">Privacy Policy</a>
-<a class="font-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="support.html">Contact</a>
-</div>
-<p class="font-label-md text-on-surface-variant/60 text-center md:text-right">
-© 2026 Reach. Made with care for people doing something hard.
-</p>
+<footer>
+  <div class="wrap safety">
+    <div class="safety__inner">
+      <p class="safety__disclaimer"><strong>Reach is a self-help tool designed to support personal goals, not medical advice or a replacement for professional treatment.</strong> If you are experiencing physical withdrawal symptoms or a medical emergency, seek immediate medical attention.</p>
+      <ul class="crisis">
+        <li>Call or text <strong>988</strong> (US)</li>
+        <li><a href="https://samhsa.gov">samhsa.gov</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bar">
+    <div class="footer-bar__brand">
+      <img class="footer-bar__icon" src="assets/icon-96.png" width="24" height="24" alt="" loading="lazy">
+      <span>© 2026 Reach</span>
+    </div>
+    <nav class="footer-bar__links" aria-label="Footer">
+      <a class="text-link" href="privacy.html">Privacy Policy</a>
+      <a class="text-link" href="support.html">Support</a>
+    </nav>
+  </div>
 </footer>
-</body></html>
+
+<script>
+  (function () {
+    if (document.documentElement.classList.contains('reveal-ready')) {
+      var io = new IntersectionObserver(function (entries) {
+        var batch = 0;
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          // Items that enter together (a row of cards, the screenshots) stagger by 100ms.
+          entry.target.style.setProperty('--reveal-delay', Math.min(batch++, 5) * 100 + 'ms');
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+    }
+
+    // The screenshot row only scrolls on narrow screens; make it keyboard-focusable there.
+    var shots = document.querySelector('.shots');
+    var narrow = window.matchMedia('(max-width: 767px)');
+    function syncShotsFocus() {
+      if (narrow.matches) shots.setAttribute('tabindex', '0');
+      else shots.removeAttribute('tabindex');
+    }
+    syncShotsFocus();
+    narrow.addEventListener('change', syncShotsFocus);
+
+    // iOS Safari only applies :active (the card press state) when a touch listener exists.
+    document.addEventListener('touchstart', function () {}, { passive: true });
+  })();
+</script>
+</body>
+</html>
